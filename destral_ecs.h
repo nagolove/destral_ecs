@@ -11,8 +11,9 @@
 
 */
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
 
 /*  de_cp_type:
     Component Type identifier information.
@@ -23,7 +24,8 @@ typedef struct de_cp_type {
     const char* name; // component name
 } de_cp_type;
 
-#define DE_MAKE_CP_TYPE(TypeId, TypeName) { .cp_id = TypeId, .cp_sizeof = sizeof(TypeName) , .name = #TypeName }
+#define DE_MAKE_CP_TYPE(TypeId, TypeName) \
+{ .cp_id = TypeId, .cp_sizeof = sizeof(TypeName) , .name = #TypeName }
 
 /*  de_entity:
 
